@@ -1,0 +1,17 @@
+== fullscrn
+
+A simple {Dojo}[http://dojotoolkit.org] plugin, that provides a simple way to scale and center an image to fill the browser's window while maintain image's aspect ratio.
+
+=== Usage
+
+First, clone the fullscrn repository:
+
+	<tt>git clone git://github.com/tcsizmadia/fullscrn.git</tt>
+	
+If <tt>git</tt> is a no-go, aternatively You can download the zip-package from the Downloads section.
+
+After the package is on Your document root, follow these simple steps:
+
+	* Include the <b>required</b> style sheet:
+	<pre><link rel="stylesheet" href="css/fullscrn.css" type="text/css" /></pre>
+	
