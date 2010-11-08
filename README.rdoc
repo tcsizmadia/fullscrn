@@ -1,6 +1,6 @@
-= fullscrn
+= ttcon.fullscrn
 
-A simple {Dojo}[http://dojotoolkit.org] plugin, that provides a simple way to scale and center an image to fill the browser's window while maintain image's aspect ratio.
+A {Dojo}[http://dojotoolkit.org] plugin, that provides a simple way to scale and center an image to fill the browser's window while maintaining the aspect ratio of the original image. Currently, it is tested on Safari 5 (OSX), Firefox 4 BETA, Internet Explorer version 7 and 8.
 
 === Usage
 
@@ -19,9 +19,9 @@ Then You have to configure Dojo to find the <tt>ttcon.fullscrn</tt> module. The 
 	<script type="text/javascript">
 	djConfig = {
 		parseOnLoad: true,
-		baseUrl: './',
+		baseUrl: "./",
 		modulePaths: {
-			'ttcon': 'lib/ttcon'
+			"ttcon": "lib/ttcon"
 		}
 	};
 	</script>
@@ -30,7 +30,7 @@ Then You have to configure Dojo to find the <tt>ttcon.fullscrn</tt> module. The 
 After that, the plugin is ready to do the hard work for You:
 	<script type="text/javascript">
 		dojo.require("dojox.html.entities");
-		dojo.require('ttcon.fullscrn');
+		dojo.require("ttcon.fullscrn");
 					
 		dojo.ready(function() {
 			dojo.style(dojo.byId("content"), { opacity: 0 });
@@ -47,13 +47,13 @@ After that, the plugin is ready to do the hard work for You:
 
 === Changing the background-image after init
 
-It is very simple to change the image - just call the <b>setImage</b> method, with the url of the new background:
+It is very simple to change the image - just call the <b>setImage</b> method, with the URL of the new background:
 
 	fullScr.setImage("http://url.of/the/new-image.jpg");
 	
-=== The onImageChanged custom event
+=== The "onImageChanged" custom event
 
-If the plugin successfully loaded, placed and scaled the image, fires the <b>onImageChanged</b> event. The following example logs the loaded image's url to the console:
+If the plugin successfully loaded, placed and scaled the image, fires the <b>"onImageChanged"</b> event. The following example logs the URL of the loaded image to the console:
 
 	dojo.connect(fullScr, "onImageChanged", function(imgNode) {
 		console.log('image changed: ' + imgNode);
