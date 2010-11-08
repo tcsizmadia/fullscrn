@@ -12,47 +12,47 @@ If <tt>git</tt> is a no-go, alternatively You can download the zip-package from 
 
 After You've copied the <b>css</b> and <b>lib</b> folders to the document-root, just include the required style sheet: 
 
-	<link rel="stylesheet" href="css/fullscrn.css" type="text/css" />
+ <link rel="stylesheet" href="css/fullscrn.css" type="text/css" />
 	
 Then, You have to configure Dojo to find the <b>ttcon.fullscrn</b> module. The easiest way is to use it in concert with the XD-version of Dojo from the Google-CDN:
 
-	<script type="text/javascript">
-	djConfig = {
-		parseOnLoad: true,
-		baseUrl: "./",
-		modulePaths: {
-			"ttcon": "lib/ttcon"
-		}
-	};
-	</script>
-	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js" type="text/javascript"></script>
+ <script type="text/javascript">
+ djConfig = {
+ 	parseOnLoad: true,
+ 	baseUrl: "./",
+ 	modulePaths: {
+ 		"ttcon": "lib/ttcon"
+ 	}
+ };
+ </script>
+ <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js" type="text/javascript"></script>
 
 After that, the plugin is ready to do the hard work for You:
 
-	<script type="text/javascript">
-		dojo.require("dojox.html.entities");
-		dojo.require("ttcon.fullscrn");
-					
-		dojo.ready(function() {
-			var fullScr = new ttcon.fullscrn({
-				image: "http://url.of/the-image.jpg"
-			});
-		});
-	</script>
+ <script type="text/javascript">
+ 	dojo.require("dojox.html.entities");
+ 	dojo.require("ttcon.fullscrn");
+ 				
+ 	dojo.ready(function() {
+ 		var fullScr = new ttcon.fullscrn({
+ 			image: "http://url.of/the-image.jpg"
+ 		});
+ 	});
+ </script>
 
 === Changing the background-image after init
 
 It is very simple to change the image - just call the <b>setImage</b> method, with the URL of the new background:
 
-	fullScr.setImage("http://url.of/the/new-image.jpg");
+ fullScr.setImage("http://url.of/the/new-image.jpg");
 	
 === The "onImageChanged" custom event
 
 If the plugin successfully loaded, placed and scaled the image, fires the <b>"onImageChanged"</b> event. The following example logs the URL of the loaded image to the console:
 
-	dojo.connect(fullScr, "onImageChanged", function(imgNode) {
-		console.log('image changed: ' + imgNode.src);
-	});
+ dojo.connect(fullScr, "onImageChanged", function(imgNode) {
+ 	console.log('image changed: ' + imgNode.src);
+ });
 
 === Contact
 
