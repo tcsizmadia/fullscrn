@@ -6,11 +6,11 @@ A {Dojo}[http://dojotoolkit.org] plugin, that provides a simple way to scale and
 
 First, clone the fullscrn repository:
 
-	git clone git://github.com/tcsizmadia/fullscrn.git
+git clone git://github.com/tcsizmadia/fullscrn.git
 	
 If <tt>git</tt> is a no-go, alternatively You can download the zip-package from the Downloads section.
 
-After You've got the <b>css</b> and <b>lib</b> folders in the document-root, just include the required style sheet: 
+After You've copied the <b>css</b> and <b>lib</b> folders to the document-root, just include the required style sheet: 
 
 	<link rel="stylesheet" href="css/fullscrn.css" type="text/css" />
 	
@@ -28,17 +28,12 @@ Then You have to configure Dojo to find the <tt>ttcon.fullscrn</tt> module. The 
 	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js" type="text/javascript"></script>
 
 After that, the plugin is ready to do the hard work for You:
+
 	<script type="text/javascript">
 		dojo.require("dojox.html.entities");
 		dojo.require("ttcon.fullscrn");
 					
 		dojo.ready(function() {
-			dojo.style(dojo.byId("content"), { opacity: 0 });
-			
-			dojo.query(".code").forEach(function(item) {
-				item.innerHTML = dojox.html.entities.encode(item.innerHTML);
-			});
-			
 			var fullScr = new ttcon.fullscrn({
 				image: "http://url.of/the-image.jpg"
 			});
