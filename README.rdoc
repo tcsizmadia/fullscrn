@@ -8,9 +8,9 @@ First, clone the fullscrn repository:
 
 	git clone git://github.com/tcsizmadia/fullscrn.git
 	
-If <tt>git</tt> is a no-go, aternatively You can download the zip-package from the Downloads section.
+If <tt>git</tt> is a no-go, alternatively You can download the zip-package from the Downloads section.
 
-After You've got the <b>css</b> and <b>lib</b> folders in the document-root, include the required style sheet: 
+After You've got the <b>css</b> and <b>lib</b> folders in the document-root, just include the required style sheet: 
 
 	<link rel="stylesheet" href="css/fullscrn.css" type="text/css" />
 	
