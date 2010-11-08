@@ -6,12 +6,43 @@ A simple {Dojo}[http://dojotoolkit.org] plugin, that provides a simple way to sc
 
 First, clone the fullscrn repository:
 
-	<tt>git clone git://github.com/tcsizmadia/fullscrn.git</tt>
+	git clone git://github.com/tcsizmadia/fullscrn.git
 	
 If <tt>git</tt> is a no-go, aternatively You can download the zip-package from the Downloads section.
 
-After the package is on Your document root, follow these simple steps:
+After You've got the <b>css</b> and <b>lib</b> folders in the document-root, include the required style sheet: 
 
-	* Include the <b>required</b> style sheet:
-	<pre><link rel="stylesheet" href="css/fullscrn.css" type="text/css" /></pre>
+	<link rel="stylesheet" href="css/fullscrn.css" type="text/css" />
 	
+Then You have to configure Dojo to find the <tt>ttcon.fullscrn</tt> module. The easiest way is to use it in concert with the XD-version of Dojo from the Google-CDN:
+
+	<script type="text/javascript">
+	 djConfig = {
+	 		parseOnLoad: true,
+			baseUrl: './',
+			modulePaths: {
+				'ttcon': 'lib/ttcon'
+			}
+        };
+	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js" type="text/javascript"></script>
+
+After that, the plugin is ready to do the hard work for You:
+	<script type="text/javascript">
+		dojo.require("dojox.html.entities");
+		dojo.require('ttcon.fullscrn');
+					
+		dojo.ready(function() {
+			dojo.style(dojo.byId("content"), { opacity: 0 });
+			
+			dojo.query(".code").forEach(function(item) {
+				item.innerHTML = dojox.html.entities.encode(item.innerHTML);
+			});
+			
+			var fullScr = new ttcon.fullscrn({
+				image: "http://url.of/the-image.jpg"
+			});
+		});
+	</script>
+			
+
