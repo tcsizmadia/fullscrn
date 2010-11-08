@@ -56,7 +56,7 @@ It is very simple to change the image - just call the <b>setImage</b> method, wi
 If the plugin successfully loaded, placed and scaled the image, fires the <b>"onImageChanged"</b> event. The following example logs the URL of the loaded image to the console:
 
 	dojo.connect(fullScr, "onImageChanged", function(imgNode) {
-		console.log('image changed: ' + imgNode);
+		console.log('image changed: ' + imgNode.src);
 	});
 
 === Contact
