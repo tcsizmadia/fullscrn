@@ -1,4 +1,4 @@
-= ttcon.fullscrn (0.4.9)
+= ttcon.fullscrn (0.5.0)
 
 A {Dojo}[http://dojotoolkit.org] module, that provides a simple way to scale and center an image to fill the browser's window while maintaining the aspect ratio of the original image. Currently, it is tested on Safari 5 (OSX), Firefox 4 BETA, Google Chrome (OSX + Windows), Internet Explorer version 7 and 8.
 
