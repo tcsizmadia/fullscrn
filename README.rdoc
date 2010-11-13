@@ -40,6 +40,14 @@ After that, the plugin is ready to do the hard work for You:
  		});
  	});
  </script>
+ 
+Wrap the content in a div with fullscrn-body class:
+
+ <body>
+ 	<div class="fullscrn-body">
+ 		<!-- CONTENT HERE -->
+ 	</div>
+ </body>
 
 === Changing the background-image after init:
 
