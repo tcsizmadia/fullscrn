@@ -1,4 +1,4 @@
-= ttcon.fullscrn (0.5.3)
+= ttcon.fullscrn (0.5.4)
 
 A {Dojo}[http://dojotoolkit.org] module, that provides a simple way to scale and center an image to fill the browser's window while maintaining the aspect ratio of the original image. Currently, it is tested on Safari 5 (OSX), Firefox 4 BETA, Google Chrome (OSX + Windows), Internet Explorer version 7 and 8.
 
@@ -36,11 +36,13 @@ After that, the plugin is ready to do the hard work for You:
  				
  	dojo.ready(function() {
  		var fullScr = new ttcon.fullscrn({
- 			image: "http://url.of/the-image.jpg"
+ 			image: "http://url.of/the-image.jpg",
+ 			fadeDuration: 750
  		});
  	});
  </script>
- 
+
+It is not necessary to provide an image on init and the fadeDuration is completly optional (defaults to 500ms). 
 Wrap the content in a div with fullscrn-body class:
 
  <body>
