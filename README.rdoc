@@ -1,4 +1,4 @@
-= ttcon.fullscrn (0.5.4)
+= ttcon.fullscrn (0.5.5)
 
 A {Dojo}[http://dojotoolkit.org] module, that provides a simple way to scale and center an image to fill the browser's window while maintaining the aspect ratio of the original image. Currently, it is tested on Safari 5 (OSX), Firefox 4 BETA, Google Chrome (OSX + Windows), Internet Explorer version 7 and 8.
 
@@ -34,7 +34,7 @@ After that, the plugin is ready to do the hard work for You:
  <script type="text/javascript">
  	dojo.require("ttcon.fullscrn");
  				
- 	dojo.ready(function() {
+ 	dojo.ready(function(){
  		var fullScr = new ttcon.fullscrn({
  			image: "http://url.of/the-image.jpg",
  			fadeDuration: 750
@@ -59,17 +59,23 @@ It is very simple to change the image - just call the <b>setImage</b> method, wi
 	
 === The "onImageChanged" custom event:
 
+NEW: Now it is recommended to subscribe to fullscrn's ttcon/fullscrn/changed event:
+ dojo.subscribe("ttcon/fullscrn/changed", fullscrn, function(imgNode){ ... });
+ 
 If the plugin successfully loaded, placed and scaled the image, fires the <b>"onImageChanged"</b> event. The following example logs the URL of the loaded image to the console:
 
- dojo.connect(fullScr, "onImageChanged", function(imgNode) {
+ dojo.connect(fullScr, "onImageChanged", function(imgNode){
  	console.log('image changed: ' + imgNode.src);
  });
 
 === The "onImageLoading" custom event:
 
+NEW: Now it is recommended to subscribe to the ttcon/fullscrn/loading event:
+ dojo.subscribe("ttcon/fullscrn/loading", fullscrn, function(imgSrc){ ... });
+ 
 This event is fired when the downloading of the image begins. Example:
 
- dojo.connect(fullScr, "onImageLoading", function(imgSrc) {
+ dojo.connect(fullScr, "onImageLoading", function(imgSrc){
  	console.log('image is loading: ' + imgSrc);
  });
 
